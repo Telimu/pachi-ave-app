@@ -1,0 +1,11 @@
+@import "../colors.scss";
+
+.header {
+  background-color: $header-background-color;
+  &-items {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+  }
+}

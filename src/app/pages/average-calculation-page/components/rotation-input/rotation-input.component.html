@@ -1,0 +1,18 @@
+<ion-card class="card">
+  <ion-card-content>
+    <form [formGroup]="inputRotationForm" *ngIf="inputRotationForm">
+      <ion-input
+        class="card_input-area_input"
+        label="開始回転数"
+        formControlName="startRotation"
+        type="number"
+      ></ion-input>
+      <ion-input
+        class="card_input-area_input"
+        label="総合回転数"
+        formControlName="totalRotation"
+        type="number"
+      ></ion-input>
+    </form>
+  </ion-card-content>
+</ion-card>

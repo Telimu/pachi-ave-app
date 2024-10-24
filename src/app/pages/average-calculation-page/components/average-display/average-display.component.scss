@@ -1,0 +1,31 @@
+@import "../../../../layout/colors.scss";
+
+.card {
+  &_content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: $card-background-color;
+    color: white;
+    &_bold-text {
+      font-size: large;
+      font-weight: bold;
+    }
+    &_average {
+      &_left-align {
+        text-align: left;
+      }
+      &_center-align {
+        text-align: center;
+        font-size: 28px;
+      }
+      &_right-align {
+        text-align: right;
+      }
+    }
+    &_emoji {
+      font-size: 50px;
+      text-align: center;
+    }
+  }
+}

@@ -1,0 +1,13 @@
+@import "../../../../layout/colors.scss";
+
+.card {
+  background-color: $card-background-color;
+  color: white;
+  &_button-area {
+    display: flex;
+    justify-content: end;
+    &_button {
+      width: 100px;
+    }
+  }
+}

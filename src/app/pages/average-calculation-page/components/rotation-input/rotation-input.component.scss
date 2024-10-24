@@ -1,0 +1,15 @@
+@import "../../../../layout/colors.scss";
+
+.card {
+  background-color: $card-background-color;
+  color: white;
+  &_input-area {
+    background-color: $card-background-color;
+    &_input {
+      background-color: $card-background-color;
+      color: white;
+      text-align: right;
+      border-bottom: 1px solid white;
+    }
+  }
+}

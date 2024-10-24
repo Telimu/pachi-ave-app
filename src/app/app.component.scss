@@ -1,0 +1,11 @@
+@import "./layout/colors.scss";
+
+:host {
+  --ion-background-color: $background-color;
+}
+
+.content {
+  background: $background-color;
+  height: 100%;
+  overflow-y: hidden;
+}

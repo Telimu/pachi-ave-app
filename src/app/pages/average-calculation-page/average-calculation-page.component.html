@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <app-common-header></app-common-header>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <app-rotation-input
+    (startRotationChange)="onStartRotationChange($event)"
+    (totalRotationChange)="onTotalRotationChange($event)"
+  ></app-rotation-input>
+  <app-investment-amount-input
+    (investmentAmount)="onInvestmentAmountChange($event)"
+  ></app-investment-amount-input>
+  <app-average-display
+    [startRotation]="inputStartRotation"
+    [totalRotation]="inputTotalRotation"
+    [investmentAmount]="inputInvestmentAmount"
+  ></app-average-display>
+</ion-content>

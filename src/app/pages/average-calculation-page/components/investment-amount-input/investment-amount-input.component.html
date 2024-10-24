@@ -1,0 +1,41 @@
+<ion-card class="card">
+  <ion-card-content>
+    <form
+      [formGroup]="inputInvestmentAmountForm"
+      *ngIf="inputInvestmentAmountForm"
+    >
+      <div>
+        <p>
+          現在の投資金額
+          {{ inputInvestmentAmountForm.get("investmentAmount")?.value }}円
+        </p>
+      </div>
+      <div class="card_button-area">
+        <ion-button
+          (click)="addInvestmentAmount(500)"
+          class="card_button-area_button"
+          >+500円</ion-button
+        >
+        <ion-button
+          color="danger"
+          (click)="reduceInvestmentAmount(500)"
+          class="card_button-area_button"
+          >-500円</ion-button
+        >
+      </div>
+      <div class="card_button-area">
+        <ion-button
+          (click)="addInvestmentAmount(1000)"
+          class="card_button-area_button"
+          >+1000円</ion-button
+        >
+        <ion-button
+          color="danger"
+          class="card_button-area_button"
+          (click)="reduceInvestmentAmount(1000)"
+          >-1000円</ion-button
+        >
+      </div>
+    </form>
+  </ion-card-content>
+</ion-card>

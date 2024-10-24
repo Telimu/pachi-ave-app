@@ -1,0 +1,27 @@
+<ion-card class="card">
+  <ion-card-content class="card_content">
+    <div>
+      遊戯を始めて
+      <span class="card_content_bold-text">{{ rotationCount }} </span>回転
+    </div>
+
+    <div>
+      投資額は
+      <span class="card_content_bold-text">{{ investmentAmount }}</span> 円
+    </div>
+
+    <div class="card_content_average">
+      <div class="card_content_average_left-align">
+        1000円(250玉)あたりの平均回転数は
+      </div>
+      <div class="card_content_average_center-align">
+        {{ averageRotation }}
+      </div>
+      <div class="card_content_average_right-align">回転です</div>
+    </div>
+
+    <div class="card_content_emoji">
+      {{ setEmoji(averageRotation) }}
+    </div>
+  </ion-card-content>
+</ion-card>
