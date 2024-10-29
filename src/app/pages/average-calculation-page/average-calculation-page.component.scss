@@ -1,0 +1,6 @@
+@import "../../layout/colors.scss";
+
+ion-content {
+  --overflow: hidden;
+  background-color: $background-color;
+}

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { AverageCalculationPageComponent } from '../pages/average-calculation-page/average-calculation-page.component';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,8 @@ import { NavController } from '@ionic/angular';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  averageCalculation = AverageCalculationPageComponent;
+
   constructor(private navCtrl: NavController) {}
 
   navigateToAverageCalculationPage() {
