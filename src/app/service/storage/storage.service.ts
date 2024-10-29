@@ -90,9 +90,9 @@ export class StorageService {
       storeName: '',
       standName: '',
       standNumber: '',
-      investmentAmount: '',
-      startRotation: '',
-      totalRotation: '',
+      investmentAmount: '0',
+      startRotation: '0',
+      totalRotation: '0',
       comment: '',
     };
 

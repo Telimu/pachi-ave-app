@@ -1,5 +1,15 @@
 <ion-toolbar [color]="161924" class="header">
   <div class="header-items">
-    <ion-icon name="trash-outline" size="large" color="danger"></ion-icon>
+    <ion-icon
+      id="clear-data"
+      name="trash-outline"
+      size="large"
+      color="danger"
+    ></ion-icon>
+    <ion-alert
+      trigger="clear-data"
+      header="現在表示中のデータをリセットします"
+      [buttons]="clearButton"
+    ></ion-alert>
   </div>
 </ion-toolbar>
