@@ -1,15 +1,34 @@
 <ion-toolbar [color]="161924" class="header">
-  <div class="header-items">
-    <ion-icon
-      id="clear-data"
-      name="trash-outline"
-      size="large"
-      color="danger"
-    ></ion-icon>
-    <ion-alert
-      trigger="clear-data"
-      header="現在表示中のデータをリセットします"
-      [buttons]="clearButton"
-    ></ion-alert>
+  <div class="header_items">
+    <div class="header_items_popover">
+      <ion-button id="popover-button" fill="clear" size="small"
+        >現在選択中のデータ <ion-icon name="chevron-down-outline"></ion-icon
+      ></ion-button>
+      <ion-popover trigger="popover-button" [dismissOnSelect]="true">
+        <ng-template>
+          <ion-content>
+            <ion-list>
+              <ion-item [button]="true" [detail]="false">Option 1</ion-item>
+              <ion-item [button]="true" [detail]="false"
+                >新しいデータの追加</ion-item
+              >
+            </ion-list>
+          </ion-content>
+        </ng-template>
+      </ion-popover>
+    </div>
+    <div>
+      <ion-icon
+        id="clear-data"
+        name="trash-outline"
+        size="large"
+        color="danger"
+      ></ion-icon>
+      <ion-alert
+        trigger="clear-data"
+        header="現在表示中のデータをリセットします"
+        [buttons]="clearButton"
+      ></ion-alert>
+    </div>
   </div>
 </ion-toolbar>
