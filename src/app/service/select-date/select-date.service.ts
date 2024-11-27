@@ -29,6 +29,15 @@ export class SelectDateService {
   }
 
   /**
+   * @description 現在選択中の年,月,日 の全件データを取得
+   */
+  public getAllDataForSelectedDate(): object {
+    const selectData = this.selectedDate.getValue();
+
+    return {};
+  }
+
+  /**
    * @description 年月日情報の更新 ※から文字の場合は該当の情報が更新しない
    */
   public setSelectedDate(

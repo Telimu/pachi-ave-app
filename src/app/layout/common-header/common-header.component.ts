@@ -12,7 +12,9 @@ export class CommonHeaderComponent implements OnInit {
     private selectDateService: SelectDateService
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getPopoverListData();
+  }
 
   clearButton = [
     {
@@ -41,6 +43,17 @@ export class CommonHeaderComponent implements OnInit {
       );
 
       window.location.reload();
+    });
+  }
+
+  /**
+   * @description 選択中のデータの一覧を取得
+   */
+  getPopoverListData() {
+    this.selectDateService.getSelectedDate().subscribe(async (selectedDate) => {
+      console.log(selectedDate);
+
+      // 今サービスに登録されているデータ全件を取得する処理を作成して呼び出す
     });
   }
 }

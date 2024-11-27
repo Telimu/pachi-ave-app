@@ -1,13 +1,18 @@
 <ion-toolbar [color]="161924" class="header">
   <div class="header_items">
     <div class="header_items_popover">
-      <ion-button id="popover-button" fill="clear" size="small"
+      <ion-button
+        id="popover-button"
+        fill="clear"
+        size="small"
+        (click)="getPopoverListData()"
         >現在選択中のデータ <ion-icon name="chevron-down-outline"></ion-icon
       ></ion-button>
       <ion-popover trigger="popover-button" [dismissOnSelect]="true">
         <ng-template>
           <ion-content>
             <ion-list>
+              <!-- ここで選択中日付のデータを表示する -->
               <ion-item [button]="true" [detail]="false">Option 1</ion-item>
               <ion-item [button]="true" [detail]="false"
                 >新しいデータの追加</ion-item

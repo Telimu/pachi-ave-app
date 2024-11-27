@@ -104,6 +104,48 @@ export class StorageService {
   }
 
   /**
+   * @deprecated すでに登録されているデータの最大id+1のデータを登録する（5個以上は登録不可）
+   */
+  public async createNewData(year: string, month: string, date: string) {
+    const aveData = (await this.get(AVERAGE_DATA_KEY_NAME)) || {};
+
+    const currentYearData = aveData[year] || {};
+    const currentMonthData = currentYearData[month] || {};
+    const currentDateData = currentMonthData[date] || {};
+
+    const maxCurrentId = this.getMaxId(currentDateData);
+
+    // 5個以上のデータは登録不可と一旦する
+    if (maxCurrentId + 1 > 5) {
+      return;
+    }
+
+    currentDateData[maxCurrentId + 1] = {
+      storeName: '',
+      standName: '',
+      standNumber: '',
+      investmentAmount: '0',
+      startRotation: '0',
+      totalRotation: '0',
+      comment: '',
+    };
+
+    currentMonthData[date] = currentDateData;
+    currentYearData[month] = currentMonthData;
+    aveData[year] = currentYearData;
+
+    await this.set(AVERAGE_DATA_KEY_NAME, aveData);
+  }
+
+  /**
+   * @description 現在登録されている最大のIDを取得
+   */
+  getMaxId(currentDateData: { [key: string]: any }): number {
+    const ids = Object.keys(currentDateData).map((id) => parseInt(id, 10));
+    return ids.length > 0 ? Math.max(...ids) : 0;
+  }
+
+  /**
    * @description 当日データの存在チェック 存在しなければ新しく追加
    */
   public async checkTodayData() {
@@ -241,5 +283,16 @@ export class StorageService {
       currentMonth,
       todayDate
     );
+  }
+
+  /**
+   * @description 年月日から特定の日の全データを取得する
+   */
+  public async getAllDataForSelectedDate(
+    year: string,
+    month: string,
+    date: string
+  ) {
+    return Object;
   }
 }
